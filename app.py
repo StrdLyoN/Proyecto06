@@ -3,10 +3,18 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-datos = pd.read_csv('./vehicles_us.csv')
+import Data_wrangling
 
-print(datos.head())
+def main():
+    datos = pd.read_csv('./vehicles_us.csv')
+    datos = Data_wrangling.clean(datos)
 
-fig = px.histogram(datos, x='odometer', y='price')
+    st.header('Vehicles Graphics')
+    hist_button = st.button('Make a Histogram')
 
-fig.show()
+    if hist_button:
+        fig = px.histogram(datos, x='odometer', y='price')
+        st.plotly_chart(fig)
+
+if __name__ == '__main__':
+    main()
