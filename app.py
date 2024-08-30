@@ -26,7 +26,7 @@ def main():
     
     if disp_button:
         st.write('Scatterplot of Vehicles_usd')
-        fig01 = px.scatter(datos_clean, x='odometer')
+        fig01 = px.scatter(datos_clean, x='odometer', y= 'price')
         st.plotly_chart(fig01, use_container_width=True)
 
 if __name__ == '__main__':
