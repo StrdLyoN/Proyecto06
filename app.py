@@ -21,12 +21,12 @@ def main():
 
     if hist_button:
         st.write('Histogram of vehicles_us')
-        fig = px.histogram(datos_clean, x='odometer', y='price')
+        fig = px.histogram(datos_clean, x='odometer')
         st.plotly_chart(fig, use_container_width=True)
     
     if disp_button:
         st.write('Scatterplot of Vehicles_usd')
-        fig01 = px.scatter(datos_clean, x='odometer', y='price')
+        fig01 = px.scatter(datos_clean, x='odometer')
         st.plotly_chart(fig01, use_container_width=True)
 
 if __name__ == '__main__':
